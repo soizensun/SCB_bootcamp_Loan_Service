@@ -14,8 +14,6 @@ public class LoanService {
     private static final Logger log = LogManager.getLogger(LoanService.class.getName());
 
     public LoanInfo getLoanInfoById(Long id) throws Exception{
-        log.info("Get loan by customer id" + id);
-
         LoanInfo loneInfo = new LoanInfo();
 
         if(id.equals(1L)){

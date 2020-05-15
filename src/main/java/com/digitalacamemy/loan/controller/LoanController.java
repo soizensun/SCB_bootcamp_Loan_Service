@@ -42,13 +42,13 @@ public class LoanController {
             return ResponseEntity.ok(new ResponseModel(status, res));
         }
         catch (LoanException e){
-            log.error("loan Exception by id " + id);
+            log.error("loanException by id " + id);
             LoanError loanError = e.getLoanError();
             return ResponseEntity.ok( new ResponseModel( new Status( loanError.getCode(), loanError.getMessage() ) ) );
         }
         catch (Exception e){
             log.error("Exception by id " + id);
-            LoanError loanError = LoanError.GET_LOAN_INFO_FOUND;
+            LoanError loanError = LoanError.GET_LOAN_INFO_EXCEPTION;
             return new ResponseModel(
                     new Status(loanError.getCode(), loanError.getMessage() ), loanError.getMessage()
             ).build(HttpStatus.INTERNAL_SERVER_ERROR);

@@ -118,8 +118,8 @@ public class LoanControllerTest {
         JSONObject resq = new JSONObject(mvcResult.getResponse().getContentAsString());
         JSONObject status = new JSONObject(resq.getString("status"));
 
-        assertEquals("LOAN4002", status.get("code").toString());
-        assertEquals("Loan information not found", status.get("message").toString());
-        assertEquals("Loan information not found", resq.get("data").toString());
+        assertEquals("LOAN4001", status.get("code").toString());
+        assertEquals("Cannot get loan information", status.get("message").toString());
+        assertEquals("Cannot get loan information", resq.get("data").toString());
     }
 }
